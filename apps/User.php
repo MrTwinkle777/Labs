@@ -9,7 +9,6 @@ use Symfony\Component\Validator\Constraints\{Length, NotBlank, Positive, Regex, 
 use DateTime;
 
 
-
 class User
 {
     public int $id;
@@ -26,7 +25,6 @@ class User
         $validator = Validation::createValidator();
 
         //User ID
-
         $violations = $validator->validate($id, [
             new Positive(),
             new NotBlank(),
@@ -39,7 +37,6 @@ class User
         }
 
         //User NAME
-
         $violations = $validator->validate($name, [
             new Regex('/^[A-Z]{1}[a-z]{1,}$/'),
             new Length(['min' => 2,'max'=>20]),
@@ -53,7 +50,6 @@ class User
         }
 
         //User Password
-
         $violations = $validator->validate($password, [
             new Regex('/(?=.*[0-9])(?=.*[a-z])/'),
             new Length(['min' => 8,'max'=>20]),
@@ -68,7 +64,6 @@ class User
         }
 
         //User MAIL
-
         $violations = $validator->validate($mail, [
             new Email(),
             new NotBlank(),
@@ -81,7 +76,6 @@ class User
         }
 
 
-
         if ($flag == true)
         {
             $this->id = $id;
@@ -90,7 +84,6 @@ class User
             $this->password = $password;
             $this->dateCreate = new DateTime("now");
         }
-
 
         
     }
