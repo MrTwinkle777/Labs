@@ -4,7 +4,11 @@ namespace App;
 
 
 use Symfony\Component\Validator\Validation;
-use Symfony\Component\Validator\Constraints\{Length, NotBlank, Positive, Regex, Email};
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Positive;
+use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Validator\Constraints\Email;
 
 use DateTime;
 
@@ -32,7 +36,7 @@ class User
         if (0 !== count($violations)) {
             $flag = false;
             foreach ($violations as $violation) {
-                echo "ID: " . $violation->getMessage()."<br>";
+                echo "ID: " . $violation->getMessage() . "<br>";
             }
         }
 
@@ -45,7 +49,7 @@ class User
         if (0 !== count($violations)) {
             $flag = false;
             foreach ($violations as $violation) {
-                echo "Name: " . $violation->getMessage()."<br>";
+                echo "Name: " . $violation->getMessage() . "<br>";
             }
         }
 
@@ -59,7 +63,7 @@ class User
         if (0 !== count($violations)) {
             $flag = false;
             foreach ($violations as $violation) {
-                echo "Password: " . $violation->getMessage()."<br>";
+                echo "Password: " . $violation->getMessage() . "<br>";
             }
         }
 
@@ -71,7 +75,7 @@ class User
         if (0 !== count($violations)) {
             $flag = false;
             foreach ($violations as $violation) {
-                echo "Mail: " . $violation->getMessage()."<br>";
+                echo "Mail: " . $violation->getMessage() . "<br>";
             }
         }
 
@@ -93,7 +97,7 @@ class User
         echo "ID: {$this->id}"."<br>";
         echo "Name: {$this->name}"."<br>";
         echo "Mail: {$this->mail}"."<br>";
-        echo "Password: {$this->password}"."<br>";
+        echo "Password: {$this->password}" . "<br>";
         echo "<br>";
     }
 
